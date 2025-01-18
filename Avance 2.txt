@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_attendance_inherit_tree" model="ir.ui.view">
+            <field name="name">hr.attendance.inherit</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='check_in']" position="before">
+                    <field name="barcode"/>
+                    <field name="job_title"/>
+                    <field name="department_id"/>
+                    <field name="check_in_server" optional="hide"/>
+                    <field name="check_out_server" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="res_company_code_checker" model="ir.ui.view">
+        <field name="name">res.company.code.checker</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="custom_employee_credential.view_company_config_credential_inherit" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='x_credential_type']" position="after">
+                <field name="company_code_checker"/>
+                <field name="company_for_checks_interface"/>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo
+
+
